@@ -35,43 +35,42 @@ public class Ejercicio1 {
         //----------------------------------------------
         // Abrimos archivo de contactos ListadoRecetas.txt
         System.out.println("Abriendo archivo de recetas...");
-
+        
         String rutaRecetas = System.getProperty("user.dir") + "/recursos/ListadoRecetas.txt";
         Recetario recetario1 = new Recetario();
-
+        
         String s = "";
-
+        
         File f = new File(rutaRecetas);
         try {
-
+            
             BufferedReader br = new BufferedReader(new FileReader(f));
-
 
             //Bucle para extraer todas las lineas del archivo que se ejecuta mientras haya algo en el archivo
             while ((s = br.readLine()) != null) {
-
+                
                 String[] lineaProcesada = s.split(";");
-
+                
                 String nombre = lineaProcesada[0];
                 String tipo = lineaProcesada[1];
                 LocalDate fechaProcesada = LocalDate.parse(lineaProcesada[2]);
-
+                
                 String[] listaIngredientes = lineaProcesada[3].split(",");
-
+                
                 List<String> listaIngredientesProcesada = Arrays.asList(listaIngredientes);
-
+                
                 String[] listaPasos = lineaProcesada[4].split("\\.");
                 List<String> listlistaPasosProcesada = Arrays.asList(listaPasos);
                 Receta receta = new Receta(nombre, tipo, fechaProcesada, listaIngredientesProcesada, rutaRecetas);
-            recetario1.add(receta);
+                recetario1.add(receta);
             }
-
+            
         } catch (IOException ex) {
             System.out.println(ex);
         }
-
+        
         System.out.println("Cerrando archivo de recetas...");
-
+        
         System.out.println();
 
         //----------------------------------------------
@@ -79,9 +78,9 @@ public class Ejercicio1 {
         //----------------------------------------------
         // Abrimos el archivo de la agenda Recetario.txt
         System.out.println("Abriendo archivo del recetario...");
-
+        
         System.out.println("Cerrando archivo del recetario...");
-
+        
         System.out.println();
         System.out.println("Archivos cerrados y procesamiento finalizado");
         System.out.println("---------");
