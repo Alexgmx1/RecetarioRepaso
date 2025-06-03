@@ -46,6 +46,8 @@ public class Ejercicio1 {
 
             BufferedReader br = new BufferedReader(new FileReader(f));
 
+
+            //Bucle para extraer todas las lineas del archivo que se ejecuta mientras haya algo en el archivo
             while ((s = br.readLine()) != null) {
 
                 String[] lineaProcesada = s.split(";");
@@ -60,7 +62,7 @@ public class Ejercicio1 {
 
                 String[] listaPasos = lineaProcesada[4].split("\\.");
                 List<String> listlistaPasosProcesada = Arrays.asList(listaPasos);
-
+                
             }
 
         } catch (IOException ex) {
