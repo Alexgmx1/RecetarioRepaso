@@ -62,7 +62,8 @@ public class Ejercicio1 {
 
                 String[] listaPasos = lineaProcesada[4].split("\\.");
                 List<String> listlistaPasosProcesada = Arrays.asList(listaPasos);
-                
+                Receta receta = new Receta(nombre, tipo, fechaProcesada, listaIngredientesProcesada, rutaRecetas);
+            recetario1.add(receta);
             }
 
         } catch (IOException ex) {
